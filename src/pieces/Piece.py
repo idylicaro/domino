@@ -38,3 +38,13 @@ class Piece(object):
         temp = self.side_left
         self.side_left = self.side_right
         self.side_right = temp
+
+    def compare(self, piece) -> bool:
+        if self.get() == piece.get():
+            return True
+
+        piece.flip()
+        if self.get() == piece.get():
+            return True
+
+        return False
