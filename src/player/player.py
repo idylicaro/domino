@@ -17,6 +17,8 @@ class Player(object):
     -------
     get()
         Return a tuple with values of player
+    play(piece:Piece)
+        Remove the specified piece and return this
     """
 
     def __init__(self, name: str, pieces: list):

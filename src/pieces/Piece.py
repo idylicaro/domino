@@ -15,6 +15,8 @@ class Piece(object):
         Return a tuple with values of piece
     flip():
         Turn over side left with side right
+    compare()
+        Compare himself with other pieces
     """
 
     def __init__(self, side_left, side_right):
@@ -40,6 +42,7 @@ class Piece(object):
         self.side_right = temp
 
     def compare(self, piece) -> bool:
+        """ Compare himself with other pieces """
         if self.get() == piece.get():
             return True
 
