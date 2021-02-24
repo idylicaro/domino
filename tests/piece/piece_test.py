@@ -12,3 +12,11 @@ class TestPiece:
         piece.flip()
         (L, R) = piece.get()
         assert L == 1 and R == 0
+
+    def test_compare_invalid(self):
+        piece = Piece(0, 1)
+        assert piece.compare(Piece(2, 5)) == False
+
+    def test_compare_with_fliped_piece(self):
+        piece = Piece(0, 1)
+        assert piece.compare(Piece(1, 0)) == True
