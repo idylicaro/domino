@@ -28,18 +28,26 @@ class Piece(object):
             side_right : int
                 value of Left side of piece (0-6)
         """
-        self.side_left = side_left
-        self.side_right = side_right
+        self.__side_left = side_left
+        self.__side_right = side_right
 
     def get(self):
         """ Return a tuple with values of piece """
-        return self.side_left, self.side_right
+        return self.__side_left, self.__side_right
+
+    def get_left_side(self):
+        """ Return left side of piece"""
+        return self.__side_left
+
+    def get_right_side(self):
+        """ Return right side of piece"""
+        return self.__side_right
 
     def flip(self):
         """ Turn over side left with side right """
-        temp = self.side_left
-        self.side_left = self.side_right
-        self.side_right = temp
+        temp = self.__side_left
+        self.__side_left = self.__side_right
+        self.__side_right = temp
 
     def compare(self, piece) -> bool:
         """ Compare himself with other pieces """
