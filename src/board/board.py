@@ -21,7 +21,7 @@ class Board:
                     return None
             self.pieces_on.insert(0, piece)
         elif position == "RIGHT":
-            last_piece_copy: Piece = self.pieces_on[len(self.pieces_on)]
+            last_piece_copy: Piece = self.pieces_on[len(self.pieces_on) - 1]
             if last_piece_copy.get_right_side() != piece.get_left_side():
                 piece.flip()
                 if last_piece_copy.get_right_side() != piece.get_left_side():
