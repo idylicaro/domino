@@ -19,17 +19,22 @@ class Player(object):
         Return a tuple with values of player
     play(piece:Piece)
         Remove the specified piece and return this
+    is_bot()
+        return value of is_bot (True | False)
     """
 
-    def __init__(self, name: str, pieces: list):
+    def __init__(self, name: str, pieces: list, is_bot=False):
         """
             Parameters
             ----------
+            is_bot: bool
+                defines if the player is a bot or not
             name : str
                 player name
             pieces : list
                 player pieces list
         """
+        self.__is_bot = is_bot
         self.name = name
         self.pieces: List[Piece] = pieces
 
@@ -45,3 +50,4 @@ class Player(object):
                 return piece
         return None
 
+    def is_bot(self): return self.__is_bot
