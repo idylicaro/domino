@@ -1,4 +1,3 @@
-from src.player.player import Player
 from src.pieces.Piece import Piece
 
 
@@ -28,3 +27,9 @@ class Board:
                     return None
             self.pieces_on.append(piece)
         return piece
+
+    def get_first_piece(self):
+        return self.pieces_on[0] if len(self.pieces_on) != 0 else None
+
+    def get_last_piece(self):
+        return self.pieces_on[len(self.pieces_on) - 1] if len(self.pieces_on) != 0 else None

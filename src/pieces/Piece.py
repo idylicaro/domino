@@ -31,15 +31,15 @@ class Piece(object):
         self.__side_left = side_left
         self.__side_right = side_right
 
-    def get(self):
+    def get(self) -> (int, int):
         """ Return a tuple with values of piece """
         return self.__side_left, self.__side_right
 
-    def get_left_side(self):
+    def get_left_side(self) -> int:
         """ Return left side of piece"""
         return self.__side_left
 
-    def get_right_side(self):
+    def get_right_side(self) -> int:
         """ Return right side of piece"""
         return self.__side_right
 
