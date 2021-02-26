@@ -5,8 +5,18 @@ from src.pieces.Piece import Piece
 class TestBoard:
     def test_play(self):
         board = Board()
-        assert board.play((Piece(6, 6)), 'L').compare(Piece(6, 6))
-        assert board.play((Piece(6, 0)), 'R').compare(Piece(6, 0))
-        assert board.play((Piece(1, 0)), 'R').compare(Piece(0, 1))
-        assert board.play((Piece(2, 6)), 'L').compare(Piece(2, 6))
-        assert board.play((Piece(2, 3)), 'L').compare(Piece(3, 2))
+        assert board.play((Piece(6, 6)), 'LEFT').compare(Piece(6, 6))
+        assert board.play((Piece(6, 0)), 'RIGHT').compare(Piece(6, 0))
+        assert board.play((Piece(1, 0)), 'RIGHT').compare(Piece(0, 1))
+        assert board.play((Piece(2, 6)), 'LEFT').compare(Piece(2, 6))
+        assert board.play((Piece(2, 3)), 'LEFT').compare(Piece(3, 2))
+
+    def test_play_first_round_not_six_bomb(self):
+        board = Board()
+        assert (board.play((Piece(6, 5)), 'LEFT')) is None
+
+    def test_play_invalid_move(self):
+        board = Board()
+        assert board.play((Piece(6, 6)), 'LEFT').compare(Piece(6, 6))
+        assert (board.play((Piece(0, 0)), 'RIGHT')) is None
+        assert (board.play((Piece(0, 0)), 'LEFT')) is None
