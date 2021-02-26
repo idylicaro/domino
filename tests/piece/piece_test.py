@@ -7,6 +7,11 @@ class TestPiece:
         (L, R) = piece.get()
         assert L == 0 and R == 1
 
+    def test_get_side(self):
+        piece = Piece(0, 1)
+        assert piece.get_left_side() == 0
+        assert piece.get_right_side() == 1
+
     def test_flip(self):
         piece = Piece(0, 1)
         piece.flip()
