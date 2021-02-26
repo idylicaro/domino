@@ -20,3 +20,9 @@ class TestBoard:
         assert board.play((Piece(6, 6)), 'LEFT').compare(Piece(6, 6))
         assert (board.play((Piece(0, 0)), 'RIGHT')) is None
         assert (board.play((Piece(0, 0)), 'LEFT')) is None
+
+    def test_get_first_and_last_piece(self):
+        board = Board()
+        board.play((Piece(6, 6)), 'LEFT')
+        assert board.get_first_piece().compare(Piece(6, 6))
+        assert board.get_last_piece().compare(Piece(6, 6))
