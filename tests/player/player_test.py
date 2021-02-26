@@ -14,3 +14,9 @@ class TestPlayer:
         assert returned_piece.compare(Piece(1, 0))
         returned_piece = player.play(Piece(1, 0))
         assert returned_piece is None
+
+    def test_is_bot(self):
+        player = Player('player', [])
+        player1 = Player('player', [], True)
+        assert player.is_bot() == False
+        assert player1.is_bot() == True
