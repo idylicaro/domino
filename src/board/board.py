@@ -9,6 +9,7 @@ class Board:
         if len(self.pieces_on) == 0:
             if (piece.get()) == (6, 6):
                 self.pieces_on.append(piece)
+                return piece
             else:
                 return None
 

@@ -50,4 +50,16 @@ class Player(object):
                 return piece
         return None
 
-    def is_bot(self): return self.__is_bot
+    def is_bot(self):
+        return self.__is_bot
+
+    def has_piece_to_play(self, board):
+        """ Verify has possible play """
+        left: Piece = board.get_first_piece()
+        right: Piece = board.get_last_piece()
+        for x in self.pieces:
+            if x.get_left_side() == left.get_left_side() or x.get_right_side() == left.get_left_side():
+                return True
+            elif x.get_right_side() == right.get_right_side() or x.get_right_side() == left.get_right_side():
+                return True
+        return False
