@@ -1,3 +1,4 @@
+from src.board.board import Board
 from src.pieces.Piece import Piece
 from src.player.player import Player
 
@@ -20,3 +21,13 @@ class TestPlayer:
         player1 = Player('player', [], True)
         assert player.is_bot() == False
         assert player1.is_bot() == True
+
+    def test_has_piece_to_play(self):
+        player = Player('player', [
+            Piece(1, 0),
+            Piece(5, 5),
+        ])
+        board = Board()
+        board.play((Piece(6, 6)), 'LEFT')
+        board.play((Piece(6, 0)), 'RIGHT')
+        assert player.has_piece_to_play(board) == True
